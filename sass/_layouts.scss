@@ -1,9 +1,9 @@
 .container {
 
     max-width: 120rem;
-    height: 80vh;
     background-color: var(--grey-light-1);
     margin : 8rem auto;
+    min-height: 50rem;
 }
 
 .content {
@@ -40,7 +40,28 @@
 .hotel-view {
     flex: 1;
     
-    height: 60rem;
+    //height: 60rem;
     //align-self: stretch;
+
+}
+
+.details {
+    display: flex;
+    //justify-content: space-between;
+    padding: 4.5rem;
+    border-bottom: 1px solid var(--grey-light-2);
+}
+
+.description {
+    margin-right: 4.5rem;
+    flex: 0 0 60%;
+    background-color:#fff;
+    padding: 3rem;
+    font-size: 1.4rem;
+}
+
+.user-review {  
+    flex: 1;
+    text-align: center;
 
 }
