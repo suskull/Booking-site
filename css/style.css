@@ -19,6 +19,7 @@ Grey dark 3: #999
   --color-primary: #eb2f64;
   --color-primary-light: #ddf3f5;
   --color-primary-dark: #a6dcef;
+  --color-primary-actived: #FF3366;
   --grey-light-1:#faf9f9;
   --grey-light-2:#f4f2f2;
   --grey-light-3:#f0eeee;
@@ -104,8 +105,8 @@ body {
   .nav-user__icon-box {
     position: relative; }
   .nav-user__icon {
-    width: 3.25rem;
-    height: 3.25rem; }
+    width: 2.25rem;
+    height: 2.25rem; }
   .nav-user__span {
     width: 1.8rem;
     height: 1.8rem;
@@ -129,6 +130,51 @@ body {
     object-fit: cover;
     margin-right: 1rem; }
 
+.side-nav {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 3.5rem; }
+  .side-nav__item {
+    padding: 1.5rem 3rem;
+    position: relative; }
+    .side-nav__item:not(:last-child) {
+      margin-bottom: .5rem; }
+  .side-nav__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s; }
+  .side-nav__item:hover::before, .side-nav__item--actived::before {
+    transform: scaleY(1);
+    width: 100%; }
+  .side-nav__item:active::before {
+    background-color: var(--color-primary-actived); }
+  .side-nav__link:link, .side-nav__link:visited {
+    text-decoration: none;
+    color: var(--grey-light-1);
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+    display: block;
+    display: flex;
+    align-items: center; }
+  .side-nav__icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-right: 1rem;
+    color: currentColor; }
+
+.legal {
+  font-size: 1.2rem;
+  color: var(--grey-light-4);
+  text-align: center;
+  padding: 2.5rem; }
+
 .container {
   max-width: 120rem;
   height: 80vh;
@@ -147,8 +193,12 @@ body {
 .side-bar {
   background-color: var(--grey-dark-1);
   color: var(--grey-light-2);
-  flex: 0 1 18%; }
+  flex: 0 1 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .hotel-view {
   flex: 1;
-  background-color: #ffb6b6; }
+  background-color: #ffb6b6;
+  height: 60rem; }
